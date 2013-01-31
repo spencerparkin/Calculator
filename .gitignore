@@ -11,3 +11,12 @@
 *.lai
 *.la
 *.a
+
+# Misc.
+*.ncb
+*.suo
+*.user
+
+# Intermediates and built files
+Debug/
+Release/
