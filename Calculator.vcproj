@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:/CalcLib/Code"
+				AdditionalIncludeDirectories="../../CalcLib/Code"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -63,7 +63,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="CalcLib.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="C:/CalcLib/Build/Debug"
+				AdditionalLibraryDirectories="../../CalcLib/Build/Debug"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
