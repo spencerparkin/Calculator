@@ -85,18 +85,18 @@ int main( int argc, char** argv )
 
 		// Try to do the given calculation.
 		char userOutput[2048];
+		envPrintBuffer[0] = '\0';
 		bool calculated = calculator.Calculate( userInput, userOutput, sizeof( userOutput ) );
+
+		// If something went wrong, tell'em what.  Otherwise, give the answer.
 		if( !calculated )
-		{
-			// Something was wrong with the user's input.  Tell'em what.
 			calculator.PrintErrorReport();
-			printf( calculator.GetEnvironment()->PrintBuffer() );
-		}
 		else
-		{
-			// Print the result.
 			printf( "\n%s\n\n", userOutput );
-		}
+
+		// In all cases, success or failure, we dump the print buffer.
+		printf( calculator.GetEnvironment()->PrintBuffer() );
+		fflush( stdout );
 	}
 
 	// Return success exit code.
