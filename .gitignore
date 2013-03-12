@@ -18,5 +18,6 @@
 *.user
 
 # Intermediates and built files
-Debug/
-Release/
+Build/
+win32-release/
+win32-debug/
