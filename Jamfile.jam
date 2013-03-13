@@ -1,16 +1,20 @@
 # Jamfile for Calculator
 
-SubDir TOP ;
-
-SRCS = Calculator.cpp ;
+SubDir CALCULATOR ;
 
 # Assume that CalcLib is in a sibling directory.
 # If it's installed elsewhere, you need to change this to point to it.
-CALC_LIB_DIR = ../CalcLib ;
+CALC_LIB_DIR = $(SUBDIR)/../CalcLib ;
+SubInclude CALC_LIB_DIR ;
+
+{ # Enter scope so that we don't pollute some other Jamfile's namespace.
+
+local SRCS = Calculator.cpp ;
 
 C.IncludeDirectories Calculator : $(CALC_LIB_DIR)/Code ;
-C.LinkDirectories Calculator : $(CALC_LIB_DIR)/$(PLATFORM)-$(CONFIG) ;
-C.LinkPrebuiltLibraries Calculator : CalcLib.$(CONFIG) ;
+C.LinkLibraries Calculator : CalcLib ;
 C.Application Calculator : $(SRCS) ;
+
+} # End of scope.
 
 # Jamfile for Calculator
