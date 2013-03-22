@@ -1,17 +1,19 @@
 # Jamfile for Calculator
 
-SubDir SPENCERS_PROJECTS ;
+SubDir SPENCERS_PROJECTS Calculator ;
 
 SRCS = Calculator.cpp ;
 
 SourceGroup Calculator : "Code" : $(SRCS) ;
 
-C.IncludeDirectories Calculator : $(CALC_LIB_DIR)/Code ;
+C.IntermediatesPathRoot Calculator : ../Build ;
+C.OutputPath Calculator : Build ;
+C.IncludeDirectories Calculator : ../CalcLib/Code ;
 C.LinkLibraries Calculator : CalcLib ;
 C.Application Calculator : $(SRCS) ;
 
 Workspace Calculator : Calculator ;
 
-SubInclude SPENCERS_PROJECTS .. CalcLib ;
+SubInclude SPENCERS_PROJECTS CalcLib ;
 
 # Jamfile for Calculator
