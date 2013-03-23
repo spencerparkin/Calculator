@@ -6,7 +6,6 @@ SRCS = Calculator.cpp ;
 
 SourceGroup Calculator : "Code" : $(SRCS) ;
 
-C.IntermediatesPathRoot Calculator : ../Build ;
 C.OutputPath Calculator : Build ;
 C.IncludeDirectories Calculator : ../CalcLib/Code ;
 C.LinkLibraries Calculator : CalcLib ;
